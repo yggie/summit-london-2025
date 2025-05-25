@@ -6,15 +6,15 @@ import {IERC721} from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 contract RepliconAssetPortfolio is ERC721URIStorage {
     uint256 private _nextTokenId;
-    address private _user;
 
-    constructor(address user) ERC721("RepliconAssetPortfolio", "RPAL") {
-        _user = user;
-    }
+    constructor() ERC721("RepliconAssetPortfolio", "RPAL") {}
 
-    function listItem(string memory tokenURI) public returns (uint256) {
+    function listItem(
+        address user,
+        string memory tokenURI
+    ) public returns (uint256) {
         uint256 tokenId = _nextTokenId++;
-        _mint(_user, tokenId);
+        _mint(user, tokenId);
         _setTokenURI(tokenId, tokenURI);
 
         return tokenId;

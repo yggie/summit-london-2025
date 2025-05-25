@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "contracts:compile": "dotenv -e .env.local -- hardhat compile",
-    "local:contracts:deploy": "dotenv -e .env.local -- hardhat ignition deploy ignition/modules/RepliconAssetListing.ts --network local",
+    "local:contracts:deploy": "dotenv -e .env.local -- hardhat ignition deploy ignition/modules/RepliconAssetPortfolio.ts --network local",
     "local:network": "avalanche blockchain deploy replicontest --local",
     "dev": "next dev --turbopack",
     "build": "next build",
